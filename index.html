@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Scrolling Website</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header  id="header">
+        <a href="#" class="logo">Jungle</a>
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Destination</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </header>
+    <section>
+        <h2 id="text"><span>It's time for a new</span><br>Adventure</h2>
+        <img src="images/bird1.png" id="bird1" alt="">
+        <img src="images/bird2.png" id="bird2" alt="">
+        <img src="images/forest.png" id="forest" alt="">
+        <img src="images/rocks.png" id="rocks" alt="">
+        <img src="images/water.png" id="water" alt="">
+        <a href="" id="btn">Explore</a>
+    </section>
+    <div class="sec">
+        <h2>Parallax Scrolling Effects</h2>
+        <p>Parallax scrolling is a web site trend where the background content (i.e. an image) is moved at a different
+            speed than the foreground content while scrolling. <br><br> Parallax scrolling is a technique in computer
+            graphics where background images move past the camera more
+            slowly than foreground images, creating an illusion of depth in a 2D scene of distance. The technique
+            grew out of the multiplane camera technique used in traditional animation since the 1930s.
+            Parallax scrolling was popularized in 2D computer graphics with its introduction to video games in the early
+            1980s. Some parallax scrolling was used in the arcade video game Jump Bug (1981).It used a limited form
+            of parallax scrolling with the main scene scrolling while the starry night sky is fixed and clouds move
+            slowly, adding depth to the scenery. The following year, Moon Patrol (1982) implemented a full form of
+            parallax scrolling, with three separate background layers scrolling at different speeds, simulating the
+            distance between them. Moon Patrol is often credited with popularizing parallax scrolling. Jungle
+            King (1982), later called Jungle Hunt, also had parallax scrolling, and was released a month after Moon
+            Patrol in June 1982 <br><br>
+            Some display systems support multiple background layers that can be scrolled independently in horizontal and
+            vertical directions and composited on one another, simulating a multiplane camera. On such a display system,
+            a game can produce parallax by simply changing each layer's position by a different amount in the same
+            direction. Layers that move more quickly are perceived to be closer to the virtual camera. Layers can be
+            placed in front of the playfield—the layer containing the objects with which the player interacts—for
+            various reasons such as to provide increased dimension, obscure some of the action of the game, or distract
+            the player. <br><br>
+            Programmers may also make pseudo-layers of sprites—individually controllable moving objects drawn by
+            hardware on top of or behind the layers—if they are available on the display system. For instance Star
+            Force, an overhead-view vertically scrolling shooter for NES, used this for its starfield, and Final Fight
+            for the Super NES used this technique for the layer immediately in front of the main playfield.
+            The Amiga computer has sprites which can have any height and can be set horizontal with the copper
+            co-processor, which makes them ideal for this purpose. <br><br>
+            Risky Woods on the Amiga uses sprites multiplexed with the copper to create an entire fullscreen parallax
+            background layer as an alternative to the system's dual playfield mode. <br><br>
+            Scrolling displays built up of individual tiles can be made to 'float' over a repeating background layer by
+            animating the individual tiles' bitmaps in order to portray the parallax effect. Color cycling can be used
+            to animate tiles quickly on the whole screen. This software effect gives the illusion of another (hardware)
+            layer. Many games used this technique for a scrolling star-field, but sometimes a more intricate or
+            multi-directional effect is achieved, such as in the game Parallax by Sensible Software.</p>
+    </div>
+    <script>
+        let text=document.getElementById('text');
+        let bird1=document.getElementById('bird1');
+        let bird2=document.getElementById('bird2');
+        let forest=document.getElementById('forest');
+        let rocks=document.getElementById('rocks');
+        let btn=document.getElementById('btn');
+        let water=document.getElementById('water');
+        let header=document.getElementById('header');
+
+        window.addEventListener('scroll',function(){
+            let value=window.scrollY;
+
+            text.style.top=50+value*-0.5 + '%';
+            bird1.style.top = value * -1.5 + 'px';
+            bird1.style.left = value * 2 + 'px';
+            bird2.style.top = value * -1.5 + 'px';
+            bird2.style.left = value * -5 + 'px';
+            btn.style.marginTop = value * 1.5 + 'px';
+            rocks.style.top = value * -0.12 + 'px';
+            forest.style.top = value * 0.25 + 'px';
+            header.style.top = value * 0.5 + 'px';
+        })
+    </script>
+</body>
+</html>
